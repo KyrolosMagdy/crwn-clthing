@@ -8,7 +8,6 @@ import { selectCollection } from '../../redux/shop/shop.selectors';
 import './collection.styles.scss';
 /*match is somthing provided by Route so we have access to the actual path we are in */
 const CollectionPage = ({ collection }) => {
-	console.log('collection',collection)
 	const { title, items } = collection;
 	return(
 		<div className = 'collection-page'>
