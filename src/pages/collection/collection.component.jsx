@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 
 import CollectionItem from '../../components/collection-item/collection-item.component.jsx';
 
-import { selectTheCollection } from '../../redux/shop/shop.selectors';
+import { selectCollection } from '../../redux/shop/shop.selectors';
 
 import './collection.styles.scss';
 /*match is somthing provided by Route so we have access to the actual path we are in */
 const CollectionPage = ({ collection }) => {
 	console.log('collection',collection)
+	const { title, items } = collection;
 	return(
 		<div className = 'collection-page'>
 			<h2 className ='title'> {title.toUpperCase()} </h2>
@@ -22,7 +23,7 @@ const CollectionPage = ({ collection }) => {
 }
 
 const mapStateToProps = ( state, ownProps ) => ({
-	collection: selectTheCollection(ownProps.match.params.collectionId)(state)
+	collection: selectCollection(ownProps.match.params.collectionId)(state)
 });
 
 export default connect(mapStateToProps)(CollectionPage) ;
