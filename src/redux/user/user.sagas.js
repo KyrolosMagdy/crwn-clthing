@@ -81,7 +81,7 @@ export function* signUp({ payload: { email, password, displayName } }){
 };
 
 export function* signInAfterSignUp({ payload: { user, additionalData }}){
-	yield getSnapShotFromUserAuth( user, additionalData )
+	yield getSnapShotFromUserAuth(user, additionalData)
 }
 
 export function* onGoogleSignInStart() {

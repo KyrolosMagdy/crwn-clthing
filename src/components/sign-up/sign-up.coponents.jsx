@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 
-import {signUpStart} from '../../redux/user/user.actions';
+import { signUpStart } from '../../redux/user/user.actions';
 
 import './sign-up.styles.scss';
 
@@ -22,14 +22,14 @@ class Signup extends React.Component{
 	handleSubmit = async event => {
 		event.preventDefault();
 
-		const signUpStart = this.props;
+		const {signUpStart} = this.props;
 		const {displayName, password, confirmPassword, email} = this.state;
 
 
 		if(password !== confirmPassword){
 			alert(`Passowrds don't match`);
 			return;
-		}
+		};
 
 		signUpStart({ email, password, displayName });
 	}
